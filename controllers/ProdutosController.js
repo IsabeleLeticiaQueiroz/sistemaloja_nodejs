@@ -1,4 +1,5 @@
 import express from "express";
+import Produto from "../models/Produto.js";
 const router = express.Router();
 
 // ROTA PRODUTOS

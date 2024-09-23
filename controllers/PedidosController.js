@@ -1,4 +1,5 @@
-import express from 'express'
+import express from 'express';
+import Pedido from '../models/Pedido.js';
 const router = express.Router()
 
 // ROTA PEDIDOS
