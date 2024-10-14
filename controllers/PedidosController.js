@@ -1,18 +1,74 @@
+// PedidosController.js
 import express from 'express';
 import Pedido from '../models/Pedido.js';
-const router = express.Router()
+const router = express.Router();
 
 // ROTA PEDIDOS
-router.get("/pedidos",function(req,res){
-    const pedidos = [
-        {numero: 1, valor: 300.50},
-        {numero: 2, valor: 62.50},
-        {numero: 3, valor: 215.40},
-        {numero: 4, valor: 335.90}
-    ]
-    res.render("pedidos", {
-        pedidos: pedidos
-    })
-})
+router.get("/pedidos", function (req, res) {
+    Pedido.findAll().then((pedidos) => {
+        res.render("pedidos", {
+            pedidos: pedidos,
+        });
+    });  // aaa.
+});
 
-export default router
+router.post("/pedidos/new", (req, res) => {
+    const numero = req.body.numero;
+    const valor = req.body.valor;
+    Pedido.create({
+        numero: numero,
+        valor: valor,
+    }).then(() => {
+        res.redirect("/pedidos");
+    }).catch((error) => {
+        console.log(error);
+        res.status(500).send("Erro ao cadastrar o pedido.");
+    });
+});
+
+
+router.get("/pedidos/delete/:numero", (req, res) => {
+    const numero = req.params.numero;
+
+    Pedido.destroy({
+        where: {
+            numero: numero,
+        },
+    })
+    .then(() => {
+        res.redirect("/pedidos");
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+});
+
+router.get("/pedidos/edit/:numero", (req, res) => {
+    const numero = req.params.numero;
+    Pedido.findByPk(numero).then((pedido) => {
+        res.render("pedidosEdit", {
+            pedido: pedido,
+        });
+    });
+});
+
+router.post("/pedidos/update", (req, res) => {
+  const numero = req.body.numero;
+  const valor = req.body.valor;  
+
+  Pedido.update(
+      {
+          numero: numero,
+          valor: valor,
+      },
+      { where: { numero: numero } }
+  )
+  .then(() => {
+      res.redirect("/pedidos");
+  })
+  .catch((error) => {
+      console.log(error);
+  });
+});
+
+export default router;

@@ -1,6 +1,48 @@
 <%- include ('partials/header.ejs') %>
 <%- include ('partials/navbar.ejs') %>
 
+<section data-bs-version="5.1" class="form9 cid-ur9qaAOSgX" id="form9-9">
+    
+    <div class="container">
+        <div class="mbr-section-head">
+            <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                <strong>Cadastro</strong></h3>
+            
+        </div>
+        <div class="row justify-content-center mt-4">
+            <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
+                <form action="/clientes/new" method="POST" class="mbr-form form-with-styler mx-auto" data-form-title="Form Name">
+                    <div class="dragArea row">
+                        <div class="col-lg-12">
+                            <p class="mbr-text mbr-fonts-style align-center mb-4 display-7"> Preencha todos os campos!</p>
+                        </div>
+
+                         <!-- Campo Nome -->
+                         <div class="col-md col-12 form-group mb-3" data-for="nome">
+                            <input type="text" name="nome" placeholder="Nome do cliente" data-form-field="nome" class="form-control" >
+                        </div>
+
+                        <!-- Campo cpf -->
+                        <div class="col-md col-12 form-group mb-3" data-for="cpf">
+                            <input type="text" name="cpf" placeholder="CPF" data-form-field="cpf" class="form-control">
+                        </div>
+
+                        <!-- Campo Endereco -->
+                        <div class="col-md col-12 form-group mb-3" data-for="endereco">
+                            <input type="text" name="endereco" placeholder="Endereço" data-form-field="endereco" class="form-control" >
+                        </div>
+                        
+                        <!-- Botão de envio -->
+                        <div class="mbr-section-btn col-12 col-md-auto">
+                            <button type="submit" class="btn display-4" style="background-color: #e75e8b; color: aliceblue;">Cadastrar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section data-bs-version="5.1" class="header12 cid-upaCcF7SQP mbr-parallax-background" id="header12-7">
 
     
@@ -35,8 +77,8 @@
                                     <td><%= cliente.nome %></td>
                                     <td><%= cliente.cpf %></td>
                                     <td><%= cliente.endereco %></td>
-                                    <td><i class="bi bi-pencil-square" style="font-size: 25px;"></i></td>
-                                    <td><i class="bi bi-person-dash" style="font-size: 25px; color: #e75e8b;"></i></td>
+                                    <td><a href="/clientes/edit/<%= cliente.id %>"><i class="bi bi-pencil-square" style="font-size: 25px; color:black;"></i></a></td>
+                                    <td><a href="/clientes/delete/<%= cliente.id %>"><i class="bi bi-person-dash" style="font-size: 25px; color: #e75e8b;"></i></a></td>
                                 </tr>
                                 <% }) %>
                             </tbody>

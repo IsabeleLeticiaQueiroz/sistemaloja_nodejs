@@ -1112,6 +1112,62 @@ a {
     padding-right: 4rem;
   }
 }
+.cid-ur9qbjHJTj {
+  background-image: url("../../../assets/images/texto-do-seu-pargrafo-1-1366x768.png");
+}
+.cid-ur9qbjHJTj .mbr-fallback-image.disabled {
+  display: none;
+}
+.cid-ur9qbjHJTj .mbr-fallback-image {
+  display: block;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.cid-ur9qbjHJTj .mbr-text,
+.cid-ur9qbjHJTj .mbr-section-btn {
+  color: #232323;
+}
+.cid-ur9qbjHJTj .btn {
+  width: 100%;
+}
+.cid-ur9qbjHJTj .mbr-section-btn {
+  margin-bottom: 1.2rem;
+}
+.cid-ur9qaAOSgX {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: #fafafa;
+}
+.cid-ur9qaAOSgX .mbr-overlay {
+  background-color: #ffffff;
+  opacity: 0.4;
+}
+.cid-ur9qaAOSgX form.mbr-form {
+  border-radius: 10px;
+  background-color: #fafafa;
+}
+@media (min-width: 992px) {
+  .cid-ur9qaAOSgX form.mbr-form {
+    padding: 2rem;
+  }
+}
+@media (max-width: 991px) {
+  .cid-ur9qaAOSgX form.mbr-form {
+    padding: 1rem;
+  }
+}
+.cid-ur9qaAOSgX form.mbr-form .mbr-section-btn {
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+.cid-ur9qaAOSgX form.mbr-form .mbr-section-btn .btn {
+  width: 100%;
+  height: 100%;
+}
 .cid-upaCcF7SQP {
   padding-top: 5rem;
   padding-bottom: 5rem;

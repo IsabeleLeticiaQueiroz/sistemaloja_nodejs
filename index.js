@@ -1,4 +1,5 @@
 import express from 'express';
+const app = express();
 import connection from './config/sequelize-config.js';
 
 import Clientes from "./models/Cliente.js"; 
@@ -9,7 +10,9 @@ import ClientesController from "./controllers/ClientesController.js";
 import ProdutosController from "./controllers/ProdutosController.js";
 import PedidosController from "./controllers/PedidosController.js";
 
-const app = express();
+app.use(express.urlencoded({extended: false}))
+
+
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));

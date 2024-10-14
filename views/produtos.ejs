@@ -1,6 +1,56 @@
 <%- include ('partials/header.ejs') %>
 <%- include ('partials/navbar.ejs') %>
 
+<section data-bs-version="5.1" class="form1 cid-ur9qbjHJTj mbr-fullscreen mbr-parallax-background" id="form1-a">
+    <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(255, 255, 255);"></div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
+                <form action="/produtos/new" method="POST" class="mbr-form form-with-styler" data-form-title="cadastro_produto">
+                    <div class="row">
+                    </div>
+                    
+                    <div class="dragArea row">
+                        <div class="col-12">
+                            <h1 class="mbr-section-title mb-4 mbr-fonts-style align-center display-2">
+                                <strong>Cadastro de produtos</strong>
+                            </h1>
+                        </div>
+                        <div class="col-12">
+                            <p class="mbr-text mbr-fonts-style mb-5 align-center display-7">Preencha todos os campos!</p>
+                        </div>
+                        
+                        <!-- Campo Nome -->
+                        <div class="col-md col-12 form-group mb-3" data-for="nome">
+                            <input type="text" name="nome" placeholder="Nome do produto" data-form-field="nome" class="form-control" >
+                        </div>
+                        
+                        <!-- Campo Preço -->
+                        <div class="col-md col-12 form-group mb-3" data-for="preco">
+                            <input type="number" name="preco" placeholder="Preço" data-form-field="preco" class="form-control" step="0.2">
+                        </div>
+
+                        <!-- Campo Categoria -->
+                        <div class="col-md col-12 form-group mb-3" data-for="categoria">
+                            <input type="text" name="categoria" placeholder="Categoria" data-form-field="categoria" class="form-control" >
+                        </div>
+                        
+                        <!-- Campo Link da Imagem -->
+                        <div class="col-md col-12 form-group mb-3" data-for="imagem">
+                            <input type="text" name="imagem" placeholder="Link da imagem" data-form-field="imagem" class="form-control" >
+                        </div>
+
+                        <!-- Botão de envio -->
+                        <div class="mbr-section-btn col-12 col-md-auto">
+                            <button type="submit" class="btn btn-success display-4">Cadastrar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section data-bs-version="5.1" class="features10 cid-updVf1zu2e" id="features11-8" style="background-color: #e2f1f1;">
     <div class="container">
         <div class="title">
@@ -15,7 +65,7 @@
                 <div class="row align-items-center">
                     <div class="col-12 col-md-3">
                         <div class="image-wrapper">
-                            <img src="/imgs/<%= produto.imagem %>" alt="Mobirise Website Builder" title="">
+                            <img src="<%= produto.imagem %>" alt="Mobirise Website Builder" title="">
                         </div>
                     </div>
                     <div class="col-12 col-md">
@@ -36,8 +86,12 @@
                                         <br>
                                         <hr>
                                         <p>
-                                            <i class="bi bi-pencil-square" style="font-size: 25px;"></i>
-                                            <i class="bi bi-trash3-fill" style="font-size: 25px; margin-left: 50px; color: #e75e8b;"></i>
+                                            <a href="/produtos/edit/<%= produto.id %>">
+                                                <i class="bi bi-pencil-square" style="font-size: 25px; color: black;"></i>
+                                              </a>
+                                            <a href="/produtos/delete/<%= produto.id %>">
+                                                <i class="bi bi-trash3-fill" style="font-size: 25px; margin-left: 50px; color: #e75e8b;"></i>
+                                            </a>
                                         </p>
                                         
                                     </div>

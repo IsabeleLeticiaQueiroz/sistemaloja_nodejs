@@ -7,7 +7,7 @@ const Produto = connection.define('produtos', {
         allowNull: false,
     },
     preco: {
-        type: Sequelize.DOUBLE,
+        type: Sequelize.FLOAT,
         allowNull: false,
     },
     categoria: {

@@ -1,0 +1,44 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/navbar.ejs') %>
+
+<section data-bs-version="5.1" class="form1 cid-ur9qbjHJTj mbr-fullscreen mbr-parallax-background" id="form1-a">
+    <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(255, 255, 255);"></div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
+                <form action="/pedidos/update" method="POST" class="mbr-form form-with-styler" data-form-title="cadastro_produto">
+                    <div class="row">
+                    </div>
+                    
+                    <div class="dragArea row">
+                        <div class="col-12">
+                            <h1 class="mbr-section-title mb-4 mbr-fonts-style align-center display-2">
+                                <strong>Edição de produtos</strong>
+                            </h1>
+                        </div>
+                        <div class="col-12">
+                            <p class="mbr-text mbr-fonts-style mb-5 align-center display-7">Preencha todos os campos!</p>
+                        </div>
+                        
+                        <!-- Campo numero -->
+                        <div class="col-md col-12 form-group mb-3" data-for="numero">
+                            <input type="number" name="numero" value="<%= pedido.numero %>" data-form-field="numero" class="form-control">
+                        </div>
+
+                        <!-- Campo Valor -->
+                        <div class="col-md col-12 form-group mb-3" data-for="valor">
+                            <input type="number" name="valor" value="<%= pedido.valor%>" data-form-field="valor" class="form-control" step="0.2">
+                        </div>
+                        
+                        <!-- Botão de envio -->
+                        <div class="mbr-section-btn col-12 col-md-auto">
+                            <button type="submit" class="btn display-4" style="background-color: #e75e8b; color: aliceblue;">Salvar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include ('partials/footer.ejs') %>
