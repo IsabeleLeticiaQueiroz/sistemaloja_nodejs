@@ -1,8 +1,8 @@
 import express from "express";
 const router = express.Router();
-
-
+//importações
 import Cliente from "../models/Cliente.js";
+import Auth from "../middleware/Auth.js";
 
 // ROTA CLIENTES
 router.get("/clientes", function (req, res) {

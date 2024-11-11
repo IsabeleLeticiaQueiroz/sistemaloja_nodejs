@@ -9,6 +9,24 @@ import Pedidos from "./models/Pedido.js";
 import ClientesController from "./controllers/ClientesController.js";
 import ProdutosController from "./controllers/ProdutosController.js";
 import PedidosController from "./controllers/PedidosController.js";
+import UsersController from "./controllers/UsersController.js";
+
+// Importando o gerador de sessões do express
+import session from "express-session"
+// Importando o middleware Auth
+import Auth from "./middleware/Auth.js"
+// Importando o express flash
+import flash from "express-flash"
+// Configurar as flash messages
+app.use(flash())
+
+// Configurando o express-session
+app.use(session({
+    secret: "lojasecret",
+    cookie: {maxAge: 3600000}, // Sessão expira em 1 hora
+    saveUninitialized: false,
+    resave: false
+  }))
 
 app.use(express.urlencoded({extended: false}))
 
@@ -22,6 +40,7 @@ app.use(express.static('public'));
 app.use("/", ClientesController);
 app.use("/", ProdutosController);
 app.use("/", PedidosController);
+app.use("/", UsersController);
 
 // Conexão com o banco de dados
 connection.authenticate().then(() => {
@@ -44,6 +63,10 @@ connection.authenticate().then(() => {
 
 // Rota principal
 app.get("/", function(req, res) {
+    res.render("login");
+});
+
+app.get("/index", function(req, res) {
     res.render("index");
 });
 
